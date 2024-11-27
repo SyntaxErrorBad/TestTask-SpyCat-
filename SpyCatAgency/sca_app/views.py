@@ -138,7 +138,8 @@ class UpdateNoteAPIView(APIView):
             note_text = request.data.get('note', None)
 
             if not note_text:
-                return Response({"message": "Note text is required to update."}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"message": "Note text is required to update."},
+                                status=status.HTTP_400_BAD_REQUEST)
 
             note.note = note_text
             note.save()
